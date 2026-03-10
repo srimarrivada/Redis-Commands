@@ -44,7 +44,7 @@ Some of these commands include:
   set user_id 101
   ```
 
-* `GET`: It retrieves the value stored in the specified key.  
+* `GET`: It retrieves the value stored at the specified key.  
   Follow the below syntax to use this command:
   ```
   GET key
@@ -208,7 +208,7 @@ Some of these commands include:
 Redis string commands are used to manage values stored at specified key.  
 Some of these commands include:
 
-* `SET`: It sets the value for the specified key. 
+* `SET`: It sets the value for the specified key.  
   Follow the below syntax to use this command:
   ```
   SET key value
@@ -230,7 +230,7 @@ Some of these commands include:
   mset name "John Doe" age 30 email "John.Doe@example.com"
   ```
 
-* `GET`: It retrieves the value stored in the specified key.  
+* `GET`: It retrieves the value stored at the specified key.  
   Follow the below syntax to use this command:
   ```
   GET key
@@ -241,7 +241,7 @@ Some of these commands include:
   get message
   ```
 
-* `MGET`: It retrieves values from multiple keys.   
+* `MGET`: It retrieves values stored at multiple keys.   
   Follow the below syntax to use this command:
   ```
   MGET key1 key2 key3
@@ -263,7 +263,7 @@ Some of these commands include:
   append message "Welcome to the world!"
   ```
 
-* `SETRANGE`: It overwrites the part of string stored in a key starting at a specific offset.  It starts at the offset and replaces the existing characters with the new value.  
+* `SETRANGE`: It overwrites the part of string stored in a key starting at a specific offset.  It starts at the `offset` and replaces the existing characters with the new `value`.  
   Follow the below syntax to use this command:
   ```
   SETRANGE key offset value
@@ -291,7 +291,7 @@ Some of these commands include:
   STRLEN key
   ```
 
-  For example, use the below command to get the length of value in `message` key:
+  For example, use the below command to get the length of value at `message` key:
   ```
   strlen message
   ```
@@ -349,7 +349,7 @@ Some of these commands include:
   ```
   LPUSH key value1 value2
   ```
-  For example, use the below command to add elements to `colors` list at the start:
+  For example, use the below command to add elements to `colors` list at the beginning:
   ```
   lpush colors Red Blue Green
   ```
@@ -365,7 +365,7 @@ Some of these commands include:
   rpush colors Orange
   ```
   
-* `LINSERT`: It inserts an element before or after a specific element in a list. 
+* `LINSERT`: It inserts an element before or after a specific element in a list.  
   Follow the below syntax to use this command:
   ```
   LINSERT key BEFORE|AFTER pivot value
@@ -450,7 +450,7 @@ Some of these commands include:
   ```
   sadd countries USA Canada India China India
   ```
-    You can see that though `India` is specified twice, it added only once and returned with number of members added.
+  You can notice that though `India` is specified twice, it added only once and returned with number of members added.
   
 * `SCARD`: It returns the number of members in a set.  
   Follow the below syntax to use this command:
@@ -512,12 +512,12 @@ Some of these commands include:
   srem countries India USA
   ```
 
-* `SUNION`: It adds unique members from two sets and return those members.  
+* `SUNION`: It adds unique members from two sets and returns those members.  
   Follow the below syntax to use this command:
   ```
   sunion key1 key2
   ```
-  For example, first create a new set using the below command:
+  For example, first create a new set named `countries_new` using the below command:
   ```
   sadd countries_new India China Japan USA
   ```
@@ -574,7 +574,7 @@ Some of these commands include:
   ```
   ZCARD key
   ```
-  For example, use the below command to get number of elements in languages sorted set:
+  For example, use the below command to get number of elements in `languages` sorted set:
   ```
   zcard languages
   ```
@@ -611,7 +611,7 @@ Some of these commands include:
   zrange languages 0 -1
   ```
  
- * `ZSCAN`: It is a cursor-based iterator that iterates through all members and their associated scores in a Redis sorted set object. Unlike `ZRANGE`, it returns members in smaller batches using a cursor without blocking the server.
+ * `ZSCAN`: It is a cursor-based iterator that iterates through all members and their associated scores in a Redis sorted set object. Unlike `ZRANGE`, it returns members in smaller batches using a cursor without blocking the server.  
    Follow the below syntax to use this command:
    ```
    ZSCAN key cursor
@@ -668,7 +668,7 @@ Some of these commands include:
   HSET key field value
   ```
   
-  For example, use the below command to set the `name` field for `user:101` key:
+  For example, use the below command to set the `name` field in `user:101` hash key:
   ```
   hset user:101 name "John"
   ```
@@ -679,7 +679,7 @@ Some of these commands include:
   HMSET key field1 value1 field2 value2
   ```
 
-  For example, use the below command to set the `age` and `email` fields for `user:101` key:
+  For example, use the below command to set the `age` and `email` fields in `user:101` key:
   ```
   hmset user:101 age 30 email "John.Doe@example.com"
   ```
@@ -689,7 +689,7 @@ Some of these commands include:
   ```
   HGET key field 
   ```
-  For example, use the below command to get the `age` field value of `user:101` key:
+  For example, use the below command to get the `age` field value stored at `user:101` hash key:
   ```
   hget user:101 age
   ```
@@ -700,7 +700,7 @@ Some of these commands include:
   HMGET key field1 field2
   ```
   
-  For example, use the below command to get `name`, `age` and `email` fields value of `user:101` key:
+  For example, use the below command to get `name`, `age` and `email` fields value stored at `user:101` hash key:
   ```
   hmget user:101 name age email
   ```
@@ -711,7 +711,7 @@ Some of these commands include:
   HEXISTS key field
   ```
   
-  For example, use the below command to verify `name` field in `user:101` hash:
+  For example, use the below command to verify `name` field in `user:101` hash key:
   ```
   hexists user:101 name
   ```
@@ -722,7 +722,7 @@ Some of these commands include:
   HKEYS key
   ```
 
-  For example, use the below command to get all fields in `user:101` hash:
+  For example, use the below command to get all fields in `user:101` hash key:
   ```
   hkeys user:101
   ```
@@ -732,7 +732,7 @@ Some of these commands include:
   ```
   HVALS key
   ```
-  For example, use the below command to get all values in `user:101` hash:
+  For example, use the below command to get all values in `user:101` hash key:
   ```
   hvals user:101
   ```
@@ -743,7 +743,7 @@ Some of these commands include:
   HGETALL key
   ```
   
-  For example, use the below command to get all fields and values in `user:101` hash:
+  For example, use the below command to get all fields and values in `user:101` hash key:
   ```
   hgetall user:101
   ```
@@ -760,7 +760,7 @@ Some of these commands include:
   
   It is always good to start the `HSCAN` operation with cursor `0` which returns an array of elements with first element being the new cursor and second element with a list of keys scanned. In the next `HSCAN` command, use the new cursor returned by the previous `HSCAN` and continue scanning until it returns `0` cursor.
   
-  For example, use the below command to scan `user:101` hash with a match of field `name` beginning with `n` and a hint of `2`:
+  For example, use the below command to scan `user:101` hash key with a match of field `name` beginning with `n` and a hint of `2`:
   ```
   hscan user:101 0 match n* count 2
   ```
@@ -770,7 +770,7 @@ Some of these commands include:
   ```
   HLEN key
   ```
-  For example, use the below command to get the length of `user:101` key:
+  For example, use the below command to get the length of `user:101` hash key:
   ```
   hlen user:101
   ```
@@ -780,7 +780,7 @@ Some of these commands include:
   ```
   HINCRBY key field increment
   ```
-  For example, use the below command to increment the `age` field by `5`:
+  For example, use the below command to increment the `age` field by `5` in `user:101` hash key:
   ```
   hincrby user:101 age 5
   ```
@@ -791,13 +791,13 @@ Some of these commands include:
   HDEL key field1 field2
   ```
 
-  For example, use the below command to delete `name` and `age` fields in `user:101` key:
+  For example, use the below command to delete `name` and `age` fields in `user:101` hash key:
   ```
   hdel user:101 name age
   ```
 
 ## 7. HyperLogLog Commands
-Redis HyperLogLog (HLL) is an algorithm that estimates the number of unique elements in a set using only a tiny amount of memory (max **12 KB** per key). It is designed for high-efficiency cardinality estimation up to **264** items per set with **99%** accuracy (standard error of **0.81%**). HLL is particularly for tracking unique events in massive datasets, such as monitoring network traffic, calculating unique website visitors, or analyzing high-volume data streams where exact counting is computationally expensive.  It solves the "unique count" problem at scale without crashing the server's RAM.  
+Redis HyperLogLog (HLL) is an algorithm that estimates the number of unique elements in a set using only a tiny amount of memory (max **12 KB** per key). It is designed for high-efficiency cardinality estimation up to **$2^{64}$** items per set with **99%** accuracy (standard error of **0.81%**). HLL is particularly for tracking unique events in massive datasets, such as monitoring network traffic, calculating unique website visitors, or analyzing high-volume data streams where exact counting is computationally expensive.  It solves the "unique count" problem at scale without crashing the server's RAM.  
 
 Redis provides three commands to manage HyperLogLogs.  
 These commands include:
@@ -817,7 +817,7 @@ These commands include:
   ```
   PFCOUNT key1 key2
   ```
-  For example, use the below command to get the cardinality of `user_login` set:
+  For example, use the below command to get the approx. cardinality of `user_login` set:
   ```
   pfcount user_login
   ```
@@ -843,7 +843,7 @@ Some of these commands include:
   ```
   publish redis_chat "Hello Redis!"
   ```
-  It returns with `0` indicating that the message is not published to any clients since no one has subscribed to `redis_chat` channel yet.
+  You can notice that it returned with `0` indicating that the message is not published to any clients since no one has subscribed to `redis_chat` channel yet.
 
 * `SUBSCRIBE`: It listens for messages published to one or more Redis channels. Once the subscription is successful, it displays three events – the first event is the `subscribe` string which confirms the subscription, second event is the channel name, third event shows the number of clients it has subscribed so far.   
   Follow the below syntax to use this command:
@@ -856,7 +856,7 @@ Some of these commands include:
   redis-cli subscribe redis_chat news:sports news:weather news:tech
   ```
  
-  You can see that it displays multiple events such as `subscribe` string, respective channel name and number of channels it has subscribed.
+  You can notice that it displayed multiple events such as `subscribe` string, respective channel name and number of channels it has subscribed.
   
   Now go to another command prompt where `redis-cli` is launched and run the following commands to publish messages to various channels:
   ```
@@ -881,9 +881,9 @@ Some of these commands include:
   unsubscribe news:sports
   ```
 
-  It displays multiple events such as `unsubscribe` string, respective channel name and `0`.
+  You can notice that it displayed multiple events such as `unsubscribe` string, respective channel name and `0`.
 
-* `PSUBSCRIBE`: It allows to subscribe to multiple channels matching the pattern specified. This is useful when there are dozens of channels (for example, one for ever user) and subscribe to them all with one single command. Once the subscription is successful, it displays three events – the first event is the `psubscribe` string which confirms the pattern subscription, second event is the channel name with pattern, third event shows the number of clients it has subscribed so far.  
+* `PSUBSCRIBE`: It allows to subscribe to multiple channels matching the pattern specified. This is useful when there are dozens of channels (for example, one for every user) and subscribe to them all with one single command. Once the subscription is successful, it displays three events – the first event is the `psubscribe` string which confirms the pattern subscription, second event is the channel name with pattern, third event shows the number of clients it has subscribed so far.  
   Follow the below syntax to use this command:
   ```
   PSUBSCRIBE channel
@@ -924,7 +924,7 @@ Some of these commands include:
   `[abc]` : Matches any character inside the brackets.  
   `[a-z]` : Matches any character in the specified range.  
 
-  For example, use the below command to unsubscribe from all channels starting with chat:
+  For example, use the below command to unsubscribe from all channels starting with `orders`:
   ```
   punsubscribe orders:*
   ```
@@ -950,7 +950,8 @@ Some of these commands include:
   ```
   pubsub channels
   ```
-
+  You can see notice that it displays `news:sports` and `news:tech` channels.
+  
 * `PUBSUB NUMPAT`: It returns the total number of pattern subscriptions.  
   Follow the below syntax to use this command:
   ```
@@ -963,7 +964,7 @@ Some of these commands include:
   ```
   Currently, it displays empty list as no Redis channels have not subscribed yet to the current Redis instance. 
 
-  Now, open a new command prompt and run the following command to subscribe to `news:sports` and `news:tech` channels:
+  Now, open a new command prompt and run the following command to subscribe to channels with `orders:*` pattern:
   ```
   redis-cli psubscribe orders:*
   ```
@@ -972,7 +973,8 @@ Some of these commands include:
   ```
   pubsub numpat
   ```
-
+  You can see notice that it displays 1 pattern subscription.
+  
 * `PUBSUB NUMSUB`: It returns the number of subscribers for the specified channels.  
   Follow the below syntax to use this command:
   ```
@@ -1040,16 +1042,39 @@ Some of these commands include:
   ```
   INFO
   ```
-  To get information about specific section such as memory, clients, specify the section name next to info.
+  To get the information about specific section such as `memory`, `clients`, specify the section name next to `info`.
   
-  For example, run the below command to get details about memory:
+  For example, run the below command to get details about `memory`:
   ```
   info memory
   ```
 
-  Run the below command to get details about persistence:
+  Run the below command to get details about `persistence`:
   ```
   info persistence
+  ```
+
+* `TIME`: It displays the current server time in a specific two element format. It returns an array with two integers – first integer indicates a Unix Timestamp with seconds elapsed since **January 1, 1970** and second integer indicates the remaining microseconds in the current second.  
+  Follow the below syntax to use this command:
+  ```
+  TIME
+  ```
+
+* `PING`: It tests if the connection to the Redis server is alive. If no arguments are passed, it returns with `PONG` string. If a message is passed as an argument, the server returns that exact message back.  
+  Follow the below syntax to use this command:
+  ```
+  PING
+  ```
+
+  Run the following command to ping Redis server with a message:
+  ```
+  PING "Hello Redis"
+  ```
+ 
+* `DBSIZE`: It returns the total number of keys stored in the Redis database.  
+  Follow the below syntax to use this command:
+  ```
+  DBSIZE
   ```
 
 * `COMMAND`: It provides the massive array of commands with name, number of arguments, flags and key-positioning details for every command supported by Redis server.  
@@ -1058,7 +1083,7 @@ Some of these commands include:
   COMMAND
   ```
  
- * `COMMAND INFO`: It provides the details of one or more Redis commands.
+ * `COMMAND INFO`: It provides the details of one or more Redis commands.  
    Follow the below syntax to use this command:
    ```
    COMMAND INFO command
@@ -1096,29 +1121,6 @@ Some of these commands include:
   Follow the below syntax to use this command:
   ```
   CLIENT GETNAME
-  ```
-
-* `TIME`: It displays the current server time in a specific two element format. It returns an array with two integers – first integer indicates a Unix Timestamp with seconds elapsed since **January 1, 1970** and second integer indicates the remaining microseconds in the current second.  
-  Follow the below syntax to use this command:
-  ```
-  TIME
-  ```
-
-* `PING`: It tests if the connection to the Redis server is alive. If no arguments are passed, it returns with `PONG` string. If a message is passed as an argument, the server returns that exact message back.  
-  Follow the below syntax to use this command:
-  ```
-  PING
-  ```
-
-  Run the following command to ping Redis server with a message:
-  ```
-  PING "Hello Redis"
-  ```
- 
-* `DBSIZE`: It returns the total number of keys stored in the Redis database.  
-  Follow the below syntax to use this command:
-  ```
-  DBSIZE
   ```
 
 * `CONFIG GET`: It reads the current configuration parameters of the Redis server from the `redis.conf` file.  
